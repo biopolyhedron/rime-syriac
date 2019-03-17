@@ -1,0 +1,42 @@
+﻿# Rime dictionary
+# encoding: utf-8
+#
+# syriacc by polyhedron
+#
+# 使用說明
+# 暫時先只放基本字母
+# 
+# Author:
+#  - polyhedron	<biopolyhedron@gmail.com>
+#
+# 版權歸作者所有
+#
+
+---
+name: syriac
+version: "20180827"
+sort: original
+...
+
+ܐ	a
+ܒ	b
+ܓ	g
+ܕ	d
+ܗ	h
+ܘ	w
+ܙ	z
+ܚ	H
+ܛ	T
+ܝ	y
+ܟ	k
+ܠ	l
+ܡ	m
+ܢ	n
+ܣ	s
+ܥ	E
+ܦ	p
+ܨ	S
+ܩ	q
+ܪ	r
+ܫ	x
+ܬ	t

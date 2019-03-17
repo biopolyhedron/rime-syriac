@@ -1,0 +1,62 @@
+﻿# Rime schema
+# vim: set sw=2 sts=2 et:
+# encoding: utf-8
+
+schema:
+  schema_id: syriac
+  name: "敘利亞字母"
+  version: "20180827"
+  author:
+    - polyhedron<biopolyhedron@gmail.com>
+  description: |
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 敘利亞文, 西文 ]
+
+engine:
+  processors:
+    - ascii_composer
+    - speller
+    - selector
+    - punctuator  # 先於 editor 才會使空格作符號上屏
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator
+
+menu:
+  alternative_select_keys: "123456789"
+
+speller:
+  alphabet: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  delimiter: ''
+  auto_select: true
+
+translator:
+  dictionary: syriac
+  enable_user_dict: false
+  enable_sentence: true
+  comment_format:
+    - xform/^~(.*)$/$1/
+
+punctuator:  # 只須定義空格一個符號
+  use_space: true
+  half_shape: &punct
+    ' ' : { commit: ' ' }
+    "_": "ـ"
+    "{": "{"
+    "}": "}"
+    "[": "["
+    "]": "]"
+    "?": "؟"
+    ",": "،"
+#  full_shape: *punct
+
